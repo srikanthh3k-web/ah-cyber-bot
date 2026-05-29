@@ -16,9 +16,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
-app = Application.builder().token(TOKEN).build()
 
-app.add_handler(CommandHandler("start", start))
+def main():
+    app = Application.builder().token(TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
 
-print("Bot Running...")
-app.run_polling(close_loop=False)
+    print("Bot Running...")
+    app.run_polling()
+
+if __name__ == "__main__":
+    main()
