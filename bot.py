@@ -21,4 +21,4 @@ app = Application.builder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 
 print("Bot Running...")
-app.run_polling()
+app.run_polling(close_loop=False)
